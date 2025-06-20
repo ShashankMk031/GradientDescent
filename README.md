@@ -35,40 +35,32 @@ $$ J(\theta) = \frac{1}{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2 $$
 Where:
 - m is the number of data points
 - h($\theta$) is the predicted value
-- y^{(i)}) is the actual value
+- $y^{(i)}$ is the actual value
 
 ---
 
-## Gradient Descent Update Rule    //I am here
+## Gradient Descent Update Rule :
 
-To minimize J($\theta$), we update each parameter \( \theta_j \) using:
+To minimize J($\theta$), we update each parameter of $\theta_j$ using:
 
-\[
-\theta_j := \theta_j - \alpha \cdot \frac{\partial}{\partial\theta_j} J(\theta)
-\]
+$$ \theta_j = \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} $$ 
 
-In expanded form:
-
-\[
-\theta_j := \theta_j - \alpha \cdot \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right) x_j^{(i)}
-\]
-
-- \( \alpha \) is the **learning rate**
-- Update happens **simultaneously** for all parameters
+- $\alpha$ is the **learning rate** it can have value 0< $\alpha$ < 1
+- Update happens **simultaneously** for all parameters in each epoch
 - Repeats until convergence (i.e., cost stops decreasing)
 
 ---
 
-## ⚙️ Learning Rate: A Balancing Act
+### Learning Rate needs to be balanced just right:
 
-- If \( \alpha \) is **too small**: slow convergence
-- If \( \alpha \) is **too large**: may overshoot and never converge
+- If $\alpha$ is **too small**: slow convergence
+- If $\alpha$  is **too large**: may overshoot and never converge
 
 ![Learning Rate](https://www.jeremyjordan.me/content/images/2018/02/Screen-Shot-2018-02-24-at-11.47.09-AM.png)
 
 ---
 
-## 📊 Types of Gradient Descent
+## Types of Gradient Descent
 
 ### 1. **Batch Gradient Descent**
 - Uses **entire** dataset per update
@@ -82,56 +74,52 @@ In expanded form:
 - Uses a **small batch** per update
 - A good tradeoff between speed and accuracy
 
-![Gradient Descent Types](https://www.researchgate.net/publication/334413028/figure/fig1/AS:779880535744512@1562861971284/Comparison-of-the-convergence-of-SGD-vs-Batch-Gradient-Descent-Left-SGD-fluctuates.png)
+In simple worlds:
+Say you have 10,000 training samples.
+
+Batch GD: Uses all 10,000 for each update
+
+SGD: Updates weights 10,000 times per epoch, once per sample
+
+Mini-Batch GD (batch size 100): Updates weights 100 times per epoch
 
 ---
 
-## ⚠️ Common Challenges
+## Common Challenges
 
-### 🔸 Local Minima
-The algorithm may settle in a small dip (local minimum) rather than the lowest point (global minimum).
+###  Local Minima
+In gradient descent, we aim to find the global minimum — the absolute lowest point of the cost function.But some functions (especially in deep neural networks) have multiple dips, or local minima — points where the gradient is zero, but they are not the lowest point overall.
+Local minimum: A low point, but not the lowest
 
-### 🔸 Saddle Points
-Flat regions where the gradient is near zero, causing slow updates.
+Global minimum: The actual lowest point of the function
 
-### 🔸 Vanishing/Exploding Gradients
-Values become too small or large during updates—mostly seen in deep networks.
+Saddle point: Flat region with zero gradient but not a minimum
 
-![Optimization Challenges](https://developers.google.com/static/machine-learning/crash-course/images/OptimizerDiagram.svg)
+Why It’s a Problem?
+If gradient descent gets stuck in a local minimum or saddle point, training halts without reaching the best solution (poor model performance).
 
+#### How to avoid local minima: 
+
+There are many ways to avoid a local minima 
+- Using ADAM optimizer.
+- Starting with higher learning rate and then rescheduling it to reach the global minima.
+- Training model multiple times with diffrent initializations.
 ---
 
-## 👀 Visualizing Gradient Descent
+## Visualizing Gradient Descent
 
 This animation shows how Gradient Descent finds the minimum of a function:
 
-![Gradient Descent GIF](https://miro.medium.com/max/1400/1*f9a162GhpMbiTVTAua_lLQ.gif)
+![Visualizing Gradient Descent](https://iq.opengenus.org/content/images/2020/04/1-1.gif)
 
 ---
 
-## 🧪 Real-World Applications
+## Real-World Applications
 
-- 📈 Linear & Logistic Regression
-- 🧠 Neural Networks (deep learning)
-- 🎧 Recommendation Systems
-- 🗣️ Natural Language Processing (word embeddings, etc.)
-- 🧬 Bioinformatics and scientific computing
-
----
-
-## ✅ Conclusion
-
-Gradient Descent might seem like a simple algorithm, but it is the heart of most modern AI systems. Understanding it deeply gives you the power to fine-tune models, debug them, and build better systems — even from scratch!
-
-> **Fun fact:** You just learned a core concept behind how even state-of-the-art AI models like GPT learn.
+- Linear & Logistic Regression
+- Neural Networks (deep learning)
+- Recommendation Systems
+- Natural Language Processing (word embeddings, etc.)
 
 ---
-
-## 📚 References
-
-- [Gradient Descent in Linear Regression – GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/gradient-descent-in-linear-regression/)
-- [Gradient Descent From Scratch – Medium Article](https://medium.com/@ilmunabid/implement-gradient-descent-in-linear-regression-from-scratch-using-python-96bdae3d832f)
-- [OCDevel – ML Guide Ep.5 (Conceptual Explanation)](https://ocdevel.com/mlg/5)
-
----
-
+Thank You.
