@@ -53,8 +53,8 @@ $$ \theta_j = \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^
 
 ### Learning Rate needs to be balanced just right:
 
-- If $\alpha$ is **too small**: slow convergence
-- If $\alpha$  is **too large**: may overshoot and never converge
+- If $\alpha$ is **too small**: slow convergence and will increase the computation of the model.
+- If $\alpha$  is **too large**: may overshoot and never converge.
 
 ![Learning Rate](https://www.jeremyjordan.me/content/images/2018/02/Screen-Shot-2018-02-24-at-11.47.09-AM.png)
 
