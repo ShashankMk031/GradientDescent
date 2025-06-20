@@ -1,30 +1,12 @@
-# Understanding Gradient Descent: From Theory to Implementation
-
-![Gradient Descent Banner](https://miro.medium.com/max/1400/1*N5y2A3Nl6wHlhD8LTAQ9MA.gif)
-
-## Table of Contents
-1. [Introduction](#introduction)
-2. [What is Gradient Descent?](#what-is-gradient-descent)
-3. [The Math Behind It](#the-math-behind-it)
-4. [A Simple Example](#a-simple-example-finding-the-lowest-point)
-5. [The Learning Rate](#the-learning-rate-α)
-6. [Types of Gradient Descent](#types-of-gradient-descent)
-7. [Common Challenges](#common-challenges)
-8. [Visualizing Gradient Descent](#visualizing-gradient-descent)
-9. [Python Implementation](#python-implementation)
-10. [Real-world Applications](#real-world-applications)
-11. [Conclusion](#conclusion)
-12. [References](#references)
+# Gradient Descent Algorithm .
 
 ## Introduction
 
-Gradient Descent is one of the most important algorithms in machine learning and artificial intelligence. It's the engine behind many AI systems you interact with daily, from recommendation systems to voice assistants.
+Gradient Descent is one of the most important algorithms in machine learning.Gradient descent is one of the most common optimization algorithms in machine learning. It runs many systems , like recommendation system , voice assistance. 
 
-## What is Gradient Descent?
+## What is Gradient Descent? .
 
-At its core, Gradient Descent is an optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent. 
-
-![Gradient Descent Visualization](https://www.researchgate.net/publication/338486152/figure/fig1/AS:842229923194880@1577754242905/An-example-of-gradient-descent-optimization-in-two-steps-The-x-axis-represents-the.png)
+Gradient descent is a optimization algorithm used in linear regression to find the best fit line to the data. It works by gradually by adjusting the line’s slope and intercept to reduce the difference between actual and predicted values. At its core, Gradient Descent is an optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent. 
 
 ## The Math Behind It
 
